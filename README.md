@@ -1,5 +1,5 @@
 
-# UPI Fraud Detection Service and Dashboard (OnGoing)
+# Fraud Detection Service (OnGoing)
 
 ## Project Overview
 
