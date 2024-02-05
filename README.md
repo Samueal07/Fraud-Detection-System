@@ -1,5 +1,5 @@
 
-# Fraud Detection Service (OnGoing)
+# Fraud Detection Service 
 
 ## Project Overview
 
@@ -7,22 +7,5 @@ The "Fraud Detection Service and Dashboard" is a robust system designed to detec
 
 ## Technology Stack
 
-- **Pyspark:** PySpark is used for big data processing and machine learning.
-- **Microsoft Azure:** Azure provides the cloud infrastructure for data storage, processing, and deployment.
-- **Power BI:** Power BI is utilized for data visualization and interactive dashboards.
-- **OpenAI API:** OpenAI's API adds natural language processing capabilities to enhance fraud detection and reporting.
+- **Python:** Python is used for big data processing and machine learning.
 
-## Key Features
-
-- **Fraud Detection:** Advanced machine learning models analyze transactions to identify potential fraud.
-- **Real-time Monitoring:** Continuous monitoring for quick response to suspicious activities.
-- **Interactive Dashboard:** Power BI offers visually rich, interactive dashboards for data exploration.
-- **Natural Language Processing:** Utilizing OpenAI for text analysis and reporting.
-- **Scalable:** The solution can handle large datasets and growing transaction volumes.
-
-## Usage
-
-- Train machine learning models using PySpark.
-- Monitor transactions and fraud alerts in real-time.
-- Explore and interact with data through the Power BI dashboard.
-- Utilize OpenAI API for natural language processing.
