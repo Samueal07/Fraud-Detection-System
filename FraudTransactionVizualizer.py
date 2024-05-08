@@ -1,44 +1,36 @@
-
 import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
-import gdown  # To download from Google Drive
-import streamlit as st
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+import requests  # Use requests to download from Dropbox
 
-# Function to download data from Google Drive
-def download_from_gdrive(file_id, output_path):
-    gdown.download(f"https://drive.google.com/uc?id={file_id}", output_path, quiet=False)
+# Function to download data from Dropbox
+def download_from_dropbox(url, output_path):
+    response = requests.get(url)
+    with open(output_path, 'wb') as f:
+        f.write(response.content)
 
-# Google Drive file ID and output path
-gdrive_file_id = "1_hifVPBufIxuA5tqypRSJUCkbPr_eV8E"  # Replace with your Google Drive file ID
+# Dropbox direct download link and output path
+dropbox_file_url = "https://dl.dropboxusercontent.com/scl/fi/8ud8f7aw611auu795wtgr/FraudTransactionsLog.csv?rlkey=ztx9opt31k4hlookuzm88osi7&st=iadmhp6f&dl=1"
 data_path = "FraudTransactionsLog.csv"
 
-# Download the file
-download_from_gdrive(gdrive_file_id, data_path)
+# Download the file from Dropbox
+download_from_dropbox(dropbox_file_url, data_path)
 
-# Your existing code to load data
+# Load data with caching to improve performance
 @st.cache_resource
 def load_data(data_path, sample_fraction):
-    # Load the data and sample a subset
     data = pd.read_csv(data_path, sep=',')
     data_sampled = data.sample(frac=sample_fraction, random_state=42)
     return data_sampled
 
-# Load data
-sample_fraction = 0.05  # You can adjust the sampling fraction
+# Use the same data processing as before
+sample_fraction = 0.05  # Adjust as needed
 data = load_data(data_path, sample_fraction)
+
+# Streamlit app continues as before...
+
 
 # Your Streamlit code continues...
 
